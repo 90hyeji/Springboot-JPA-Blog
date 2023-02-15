@@ -1,6 +1,8 @@
 
 server:
   port: 9999
+  servlet:
+    context-path: /
   
 spring:
   datasource:
@@ -8,3 +10,29 @@ spring:
     url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
     username: hyeji
     password: 1234
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp  
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false
+    show-sql: true
+    
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  
+hyeji:
+  key: hyeji1234
+     
